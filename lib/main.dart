@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hoohacks/screens/lecture.dart';
 import './screens/quiz.dart';
 import './screens/login.dart';
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
-      home: logged ? QuizPage() : LoginPage(),
+      home: logged ? LecturePage() : LoginPage(),
     );
   }
 }
