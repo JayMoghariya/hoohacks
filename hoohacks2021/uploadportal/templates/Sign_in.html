@@ -1,0 +1,29 @@
+{% if message %}
+<script>
+    alert('{{ message }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sign In</title>
+    
+</head>
+<body>
+  
+<form action="/postsignIn/" method="post">
+    {% csrf_token %}
+    <br/>
+    <label for="Email">Email</label>
+    <input type="email"id="Email" name="email"><br><br>
+    <label for="Password">Password</label>
+    <input type="password" id="Password" name="pass"><br><br>
+    <input type="submit" value="SignIn"><br><br>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+    <button type="button" onclick="location.href='{% url 'signup' %} '">SignUp</button>
+</form>
+</body>
+</html>
