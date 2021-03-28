@@ -111,7 +111,8 @@ def post_create(request):
         'expected_time':expected_time
     }
 
-    database.child('users').child(a).child('postinfo').child(millis).set(data1)
+    database.child('users').child('postinfo').child(teacher_id+"_"+lecture_id+"_"+question_id).set(data1)
     # name101= database.child('users').child(a).child('details').child('teacher_id').get().val()
     return render(request,'welcome.html')
     # return render(request,'welcome.html',{'e': name101})
+
