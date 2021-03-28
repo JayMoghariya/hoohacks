@@ -31,8 +31,14 @@ class _QuizPageState extends State<QuizPage> {
   }
 
   void reply(Question r, String ans) async {
-    String token = await FirebaseMessaging.instance.getAPNSToken();
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => LecturePage(),
+      ),
+    );
 
+    String token = await FirebaseMessaging.instance.getAPNSToken();
     try {
       await http.post(
         Uri.parse('https://api.rnfirebase.io/messaging/send'),
@@ -41,28 +47,19 @@ class _QuizPageState extends State<QuizPage> {
         },
         body: jsonEncode({
           'token': token,
-          'data': {
-            'question_id': r.id,
-            'ans': ans,
-          }
+          'data': {'question_id': r.id, 'ans': ans}
         }),
       );
       print('FCM request for device sent!');
     } catch (e) {
       print(e);
     }
-
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => LecturePage()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Quiz"),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text("Quiz"), centerTitle: true),
       body: Center(
         child: ListView(
           padding: EdgeInsets.all(30),

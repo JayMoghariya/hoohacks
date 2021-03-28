@@ -7,7 +7,7 @@ class LecturePage extends StatefulWidget {
   _LecturePageState createState() => _LecturePageState();
 }
 
-Question foxexample = Question(
+Question testq = Question(
   "0",
   "The specific heat capacity of a body depends on",
   "Heat given",
@@ -39,6 +39,11 @@ class _LecturePageState extends State<LecturePage> {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => QuizPage(askQ)));
     });
+    //Only for demo
+    Future.delayed(
+        const Duration(seconds: 5),
+        () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => QuizPage(testq))));
   }
 
   @override
@@ -48,26 +53,15 @@ class _LecturePageState extends State<LecturePage> {
         title: Text("Lecture"),
         centerTitle: true,
       ),
-      body: ListView(
+      body: Padding(
         padding: EdgeInsets.all(40),
-        children: [
-          Text(
-            "Ongoing class",
-            style: Theme.of(context).textTheme.headline4,
+        child: Center(
+          child: Text(
+            "Ongoing Live Class",
+            style: Theme.of(context).textTheme.headline3,
             textAlign: TextAlign.center,
           ),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => QuizPage(foxexample)));
-              },
-              child: Text("Testing"),
-            ),
-          )
-        ],
+        ),
       ),
     );
   }
