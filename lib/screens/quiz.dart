@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:hoohacks/main.dart';
 import 'lecture.dart';
 import 'package:vibration/vibration.dart';
+import 'package:http/http.dart' as http;
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'dart:convert';
 
 class Question {
+  final String id;
   final String qstatement;
-  final List<String> options;
-  Question(this.qstatement, this.options);
+  final String optiona;
+  final String optionb;
+  final String optionc;
+  final String optiond;
+
+  Question(this.id, this.qstatement, this.optiona, this.optionb, this.optionc,
+      this.optiond);
 }
 
 class QuizPage extends StatefulWidget {
@@ -22,7 +30,28 @@ class _QuizPageState extends State<QuizPage> {
     Vibration.vibrate(pattern: [100, 500, 300, 100, 500, 1000]);
   }
 
-  void reply(int id) {
+  void reply(Question r, String ans) async {
+    String token = await FirebaseMessaging.instance.getAPNSToken();
+
+    try {
+      await http.post(
+        Uri.parse('https://api.rnfirebase.io/messaging/send'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode({
+          'token': token,
+          'data': {
+            'question_id': r.id,
+            'ans': ans,
+          }
+        }),
+      );
+      print('FCM request for device sent!');
+    } catch (e) {
+      print(e);
+    }
+
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => LecturePage()));
   }
@@ -49,24 +78,24 @@ class _QuizPageState extends State<QuizPage> {
             SizedBox(height: 40),
             ElevatedButton(
                 onPressed: () {
-                  reply(0);
+                  reply(Q, 'a');
                 },
-                child: Text(Q.options[0])),
+                child: Text(Q.optiona)),
             ElevatedButton(
                 onPressed: () {
-                  reply(1);
+                  reply(Q, 'b');
                 },
-                child: Text(Q.options[1])),
+                child: Text(Q.optionb)),
             ElevatedButton(
                 onPressed: () {
-                  reply(2);
+                  reply(Q, 'c');
                 },
-                child: Text(Q.options[2])),
+                child: Text(Q.optionc)),
             ElevatedButton(
                 onPressed: () {
-                  reply(3);
+                  reply(Q, 'd');
                 },
-                child: Text(Q.options[3])),
+                child: Text(Q.optiond)),
           ],
         ),
       ),

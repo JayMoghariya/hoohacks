@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hoohacks/main.dart';
 
 class LoginPage extends StatefulWidget {
   @override

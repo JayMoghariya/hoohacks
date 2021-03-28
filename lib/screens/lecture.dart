@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hoohacks/main.dart';
 import 'quiz.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 class LecturePage extends StatefulWidget {
@@ -10,15 +8,16 @@ class LecturePage extends StatefulWidget {
 }
 
 Question foxexample = Question(
-    "The specific heat capacity of a body depends on", [
+  "0",
+  "The specific heat capacity of a body depends on",
   "Heat given",
   "Temperature raised",
   "Mass of the body",
-  "Material of the body"
-]);
+  "Material of the body",
+);
 
 class _LecturePageState extends State<LecturePage> {
-  /* @override
+  @override
   void initState() {
     super.initState();
     FirebaseMessaging.instance
@@ -30,11 +29,18 @@ class _LecturePageState extends State<LecturePage> {
     });
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      RemoteNotification notification = message.notification;
-      AndroidNotification android = message.notification?.android;
-      if (notification != null && android != null) {}
+      Question askQ = Question(
+          message.data['question_id'],
+          message.data['question_statement'],
+          message.data['option_a'],
+          message.data['option_b'],
+          message.data['option_c'],
+          message.data['option_d']);
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => QuizPage(askQ)));
     });
-  }*/
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
