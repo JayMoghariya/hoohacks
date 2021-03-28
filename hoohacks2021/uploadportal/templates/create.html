@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionportal</title>
+</head>
+<body>
+<div>
+
+<button type="button" onclick="location.href='{% url 'logout' %}' ">Sign-out</button> 
+
+</div>
+<H2>Create Daily Class Question</H2>
+<form action="/post_create/" method="post">
+    {% csrf_token %}
+    Teacher Id :
+    <input type="text" name="teacher_id" required><br><br>
+    Lecture Id :
+    <input type="text" name="lecture_id" required><br><br>
+    Question Id :
+    <input type="text" name="question_id" required><br><br>
+    Level of difficulty (out of 100) :
+    <input type="text" name="difficulty_level" required><br><br>
+    Question statement:
+    <textarea rows="5" cols="40" name="question_statement" required></textarea>
+    <br><br>
+    Option A:
+    <textarea rows="2" cols="40" name="option_a" required></textarea>
+    <br><br>
+    Option B:
+    <textarea rows="2" cols="40" name="option_b" required></textarea>
+    <br><br>
+    Option C:
+    <textarea rows="2" cols="40" name="option_c" required></textarea>
+    <br><br>
+    Option D:
+    <textarea rows="2" cols="40" name="option_d" required></textarea>
+    <br><br>
+    Correct Option(Write Alphabet Only):
+    <textarea rows="2" cols="40" name="option_correct" required></textarea>
+    <br><br>
+    Expected Time of topic complition(in minutes):
+    <input type="int" name="expected_time" required><br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

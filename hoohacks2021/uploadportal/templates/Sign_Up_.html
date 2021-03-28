@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teacher SignUp</title>
+	<link rel="stylesheet" type="text/css" href="signup.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="bg.svg">
+		</div>
+		<div class="signup-content">
+			<form action="index.html">
+				<img src="avatar.svg">
+				<h2 class="title">Sign Up</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div"> 		
+           		   		<input type="name" id="Username" name="name" placeholder="Your Name" class="input">
+           		   </div>
+           		</div>
+				<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Email</h5>
+           		   		<input type="email" id="Email" name="email" placeholder="Your Email Id" class="input">
+           		   </div>
+				   </div>
+				   <div class="input-div one">
+					<div class="i">
+							<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+							<h5>Cource-Code</h5>
+							<input type="email" class="input">
+					</div>
+				 </div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" id="Password" name="pass" placeholder="Password" class="input">
+            	   </div>
+            	</div>
+				<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Re-type Password</h5>
+           		    	<input type="password" id="confirm_password" name="pass-repeat" placeholder=" Repeat Password" class="input">
+            	   </div>
+            	</div>
+				<label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+            	<input type="submit" class="btn" value="SignUp"><br><br>
+				{% comment %} <input type="submit" class="btn" value="Signup"> {% endcomment %}
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
