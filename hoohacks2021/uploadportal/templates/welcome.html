@@ -7,9 +7,11 @@
 <body>
 <br><br>
 <div>
-<p>Welcome to my first webapp</p><br><br>
+<p>Welcome to AttendAlert.</p><br><br>
+
 <button type="button" onclick="location.href='{% url 'create' %}' " > create question</button>
-<button type="button" > check question</button>
+
+{% comment %} <button type="button" > check question</button> {% endcomment %}
 <button type="button" onclick="location.href='{% url 'logout' %}' ">Sign-out</button>
 </div>
 </body>
