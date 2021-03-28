@@ -2,7 +2,7 @@
 "AttendAlert" Submission by team blind_Guess in HooHacks
 
 ## Inspiration
-It has been difficult for some students to transition from an in-person to a virtual classroom. With this comes the additional disadvantage of reduced attention span with studies saying that there is a decline in student's attention 10–15 min into lectures. This greatly reduces the effectiveness of these online lectures and affects students adversely during examinations as their retention power decreases. As students, we are facing the same issue and have taken this initiative to combat this in our way.
+It has been difficult for some students to transition from an in-person to a virtual classroom. With this comes the additional disadvantage of reduced attention span with studies saying that there is a decline in student's attention 10–15 min into lectures. This greatly reduces the effectiveness of these online lectures and affects students adversely during examinations as their retention power decreases. As students, we are facing the same issue and have taken this initiative to combat this in our way. Similarly, teachers may also know the attentiveness of the student and ask questions accordingly.
 
 ## What it does
 AttendAlert basically addresses the lessened attention of students during online lectures mostly due to lack and concentration and multitasking. It is a student friendly initiative to help them learn and grasp better in these circumstances.
