@@ -5,14 +5,14 @@ import pyrebase
 
 # Create your views here.
 config = {
-    'apiKey': "AIzaSyB4xWvvNkSZ6Gs03nHr4doFacnFKsauDRA",
-    'authDomain': "interactive-learning-62f0b.firebaseapp.com",
-    'projectId': "interactive-learning-62f0b",
-    'storageBucket': "interactive-learning-62f0b.appspot.com",
-    'messagingSenderId': "552467435850",
-    'databaseURL' : "https://interactive-learning-62f0b-default-rtdb.firebaseio.com/",
-    'appId': "1:552467435850:web:352afa9f2de04d39e471b3",
-    'measurementId': "G-QKM63Z2SN7"
+    'apiKey': "xxxxx",
+    'authDomain': "xxxx",
+    'projectId': "xxx",
+    'storageBucket': "xxxx",
+    'messagingSenderId': "xxxx",
+    'databaseURL' : "xxxx",
+    'appId': "xxx",
+    'measurementId': "xxxxx"
   };
 firebase=pyrebase.initialize_app(config)
 database=firebase.database()
